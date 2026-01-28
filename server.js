@@ -1,12 +1,4 @@
 
-
-// // CORS ko update karein taaki frontend access kar sake
-// app.use(cors({
-//     origin: '*', // Production mein yahan apna frontend URL daal sakte hain
-//     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-//     credentials: true
-// }));
-
 const express = require('express');
 const mysql = require('mysql2'); 
 const cors = require('cors');
@@ -18,8 +10,6 @@ const { OAuth2Client } = require('google-auth-library');
 const app = express();
 const PORT = process.env.PORT || 3000; // Render dynamic port use karega
 
-// const app = express();
-// const PORT = 3000;
 
 app.use(cors({
     origin: '*', 
@@ -36,7 +26,7 @@ app.use('/images', express.static('images'));
 // Isse replace karein purane db connection ko:
 const db = mysql.createConnection({
     host: 'b8mhbaxlcziqx6em6hcs-mysql.services.clever-cloud.com',
-    user: 'uqdlz5m0drzwewfw',
+   user: 'uqdlz5m0drzwewfw',
     password: 'HAHTLJvqXayNXrS4Bj44', // Password field ke pass bane lock icon par click karke copy karein
     database: 'b8mhbaxlcziqx6em6hcs',
     port: 3306
